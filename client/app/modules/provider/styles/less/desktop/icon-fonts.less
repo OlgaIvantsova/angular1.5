@@ -1,0 +1,117 @@
+.fa{
+    .animation(.2s);
+    &[class^='icon-'],
+    &[class*='icon-']{
+        background-size: contain;
+        background-repeat: no-repeat;
+        font-size: @font-size-md + 3;
+        vertical-align: -15%;
+        &:before{
+            color:@none;
+        }
+        &:hover{
+            opacity: .8;
+        }
+    }
+    &.icon-star{
+        background-image: url('@{path}/img/star.png')
+    }
+    &.icon-profile{
+        width: 16px;
+        height: 16px;
+        background-size: inherit;
+        background-image: url('@{path}/img/sprite.png');
+        background-position: 0px 0px;
+    }
+    &.icon-logout{
+        width: 16px;
+        height: 16px;
+        background-size: inherit;
+        background-image: url('@{path}/img/sprite.png');
+        background-position: -16px 0px;
+    }
+    .icon-wrp{
+        .animation(.3s);
+    }
+    &:before{
+        .icon-default &{
+            color: @default-secondary;
+        }
+    }
+    &.fa-danger{
+        &:before{
+            color: @danger;
+        }
+    }
+    &.fa-warning{
+        &:before{
+            color: @warning;
+        }
+    }
+    &.fa-success{
+        &:before{
+            color: @success;
+        }
+    }
+    &.fa-info{
+        &:before{
+            color: @info;
+        }
+    }
+    &:hover{
+        &:before{
+            .icon-danger-hover &{
+                color: @danger;
+            }
+            .icon-warning-hover &{
+                color: @warning;
+            }
+            .icon-success-hover &{
+                color: @success;
+            }
+            .icon-info-hover &{
+                color: @info;
+            }
+        }
+    }
+    & + .text{
+        margin-left: .5rem;
+    }
+}
+.icon-btn{
+    & + .icon-btn{
+        margin-left: 1rem;
+    }
+    .date + &{
+        @media (min-width: 768px) {
+            margin-left: 1rem;
+        }
+    }
+}
+.icon-btn-wrp{
+    @media (max-width: 767px){
+        top: 50%;
+        .translate(0, -50%);
+        position: relative;
+        display: block;
+    }
+}
+.circle-xs{
+    @media (max-width: 767px) {
+        display: block;
+        text-align: center;
+        width: 30px;
+        height: 30px;
+        margin: 0 auto;
+        position: relative;
+        .fa{
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: auto;
+            top: 50%;
+            .translate( 0, -50%);
+        }
+        margin: 0 !important;
+    }
+}

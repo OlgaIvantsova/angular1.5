@@ -1,0 +1,17 @@
+.scroll-box{
+    height: 463px;
+    overflow: hidden;
+    overflow-y: auto;
+    @media (min-width: 768px) {
+        .calc(height, '100vh - 370px');
+        min-height: 410px;
+    }
+    @media (max-width: 767px) {
+        .calc(height, '100vh - 225px');
+    }
+    .mCSB_inside{
+        &  > .mCSB_container{
+            margin-right: 0;
+        }
+    }
+}

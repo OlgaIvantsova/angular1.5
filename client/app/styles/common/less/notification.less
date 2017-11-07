@@ -1,0 +1,28 @@
+error{
+    font-size: @font-size-xs - 1;
+    color: @danger;
+    position: absolute;
+    font-family: @font-semibold;
+    margin-top: 2px;
+    .error-static &{
+        bottom: 5px;
+        left: 20px;
+        z-index: 10;
+    }
+    .card-wrp &{
+        left: 0;
+        right: 0;
+    }
+}
+.box{
+    .form-control{
+        &.ng-invalid.ng-dirty{
+            border-bottom-color: @danger !important;
+        }
+    }
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    .box-shadow (inset 0px; 0px; 0px; 40px; @white; 100%) !important;
+}

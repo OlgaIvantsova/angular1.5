@@ -1,0 +1,156 @@
+label, b{
+    font-weight: 100;
+}
+b, strong{
+    font-family: @font-bold;
+    font-weight: 100 !important;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
+    color: @default;
+    font-family: @font-bold;
+}
+h2, .h2{
+    .container-landing &{
+        @media (max-width: 767px) {
+            font-size: @h3 - 1;
+            margin-bottom: 0;
+        }
+    }
+}
+h4, .h4{
+    .container-landing &{
+        @media (max-width: 767px) {
+            font-size: @font-size-sm;
+        }
+    }
+}
+h5, .h5{
+    .container-landing &{
+        @media (max-width: 767px) {
+            font-size: @font-size-default;
+            margin: 0;
+        }
+    }
+}
+h3, .h3{
+    font-size: @h3;
+}
+.no-wrap{
+    white-space: nowrap;
+}
+.font-ligth{
+    font-family: @font-light;
+    font-weight: 100;
+}
+.font-regular{
+    font-weight: 100;
+    font-family: @font-regular;
+}
+.font-medium{
+    font-weight: 100;
+    font-family: @font-medium;
+}
+.font-semibold{
+    font-weight: 100;
+    font-family: @font-semibold;
+}
+.font-bold{
+    font-weight: 100;
+    font-family: @font-bold;
+}
+.h7{
+    font-size: @font-size-xs + 1;
+    margin: 0;
+}
+.text-gray{
+    color: @gray;
+    &.secondary{
+        color: @gray-secondary;
+    }
+    &.dark{
+        color: @gray-dark;
+    }
+}
+.text-default{
+    color: @default;
+    .secondary{
+        color: @default;
+    }
+}
+.text-primary{
+    color: @default;
+    .secondary{
+        color: @primary-secondary;
+    }
+}
+.text-info{
+    color: @info;
+    @sec:.2s;
+    .animation;
+    &a{
+        color: @info;
+    }
+}
+.text-center-xs{
+    @media (max-width: 767px) {
+        text-align: center !important;
+    }
+}
+.title{
+    &.title-md{
+        margin-bottom: 2rem;
+    }
+}
+.fw-l{
+	font-weight: 100;
+}
+.fz-xs{
+	font-size: @font-size-xs;
+}
+.fz-sm{
+	font-size: @font-size-sm;
+}
+.fz-md{
+	font-size: @font-size-md;
+}
+&.fz-smd{
+	font-size: @font-size-sm +  1;
+}
+.fz-lg{
+	font-size: @font-size-lg;
+}
+.fz-xl{
+	font-size: @font-size-lg + 2;
+}
+.fz-2xl{
+	font-size: @h3;
+}
+.fz-3xl{
+	font-size: @h2;
+}
+.fz-4xl{
+	font-size: @h1;
+}
+.font-bold{
+	font-family: @font-bold;
+	.fw-l;
+}
+.font-regular{
+	font-family: @font-regular;
+	.fw-l;
+}
+.font-medium{
+	font-family: @font-medium;
+	.fw-l;
+}
+.font-light{
+	font-family: @font-light;
+	.fw-l;
+}
+.font-reg{
+	font-family: @font-default;
+	.fw-l;
+}
+.lh-md{
+    line-height: 1.3;
+}

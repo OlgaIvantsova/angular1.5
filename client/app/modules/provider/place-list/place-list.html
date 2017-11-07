@@ -1,0 +1,137 @@
+<div class="app wrapper">
+<app-provider-nav-bar is-user-dropdown-show="true"></app-provider-nav-bar>
+
+<main>
+  <div class="container-fluid">
+    <div class="container-boxs">
+      <div class="box-wrp white shadow">
+        <div class="row row-flex">
+          <div class="col-xs-12 col-sm-12 col-md-6">
+            <div class="box border right">
+              <div class="box-header">
+                <label class="title h3">Events list</label>
+                <p class="subtitle">Places list</p>
+              </div>  <!-- box-header -->
+              <div class="box-body shadow-inner">
+                <div class="scroll-box primary row-xl no_draggerRail " data-mcs-theme="dark">
+                  <ul class='nav nav-list toggle-list'>
+                    <li
+                        class="{{ctrl.activePlaceId === place.id ? 'active' : ''}}"
+                        ng-repeat="place in ctrl.places track by place.id"
+                    >
+                      <div class="list-iteml media media-flex">
+                        <div class="media-left media-middle" ng-click="ctrl.handlerClickPlace(place.id)">
+                          <a href="#" class="img-circle">
+                            <img class="media-object" src="./img/logo/1.jpg" alt="1.jpg">
+                          </a>
+                        </div> <!-- media-left -->
+                        <div class="media-body media-middle" ng-click="ctrl.handlerClickPlace(place.id)">
+                          <label class="title h4">{{place.title}}</label>
+                          <p class="subtitle">{{place.location.address}}</p>
+                        </div>  <!-- media-body -->
+
+                        <div class="media-right media-middle text-right">
+                          <ul class="list-inline list-clear list-divide">
+                            <li>
+                              <p class="text-primary">
+                                <span class="secondary p-r-xs">Nearest event</span>
+                                {{place.upcoming_event_date | date: 'MMMM d, yyyy HH:mm a' || 'No upcoming events'}}
+                              </p>
+                            </li>
+                            <li>
+                              <div class="tooltip-wrp">
+                                <div class="icon-wrp">
+                                  <i class="fa fa-circle icon-star toggle-plus"></i>
+                                  <span class="p-l-sm">{{place.events_count}}</span>
+                                </div>
+                                <div class="tooltip-body arrow arrow-top arrow-right">
+                                  <ul class="nav">
+                                    <li>
+                                      <a href="#">Add event</a>
+                                    </li>
+                                    <li>
+                                      <a href="#">Delete place</a>
+                                    </li>
+                                  </ul>
+                                </div>
+                              </div>
+
+                            </li>
+                          </ul>
+                        </div> <!-- media-left -->
+
+                      </div>  <!-- media -->
+                      <app-provider-event-list
+                          events="ctrl.events"
+                          handler-event-click="ctrl.handlerEventClick()"
+                      ></app-provider-event-list>
+                    </li>   <!-- li -->
+                  </ul>   <!-- ul -->
+                </div>  <!-- mCustomScrollbar -->
+              </div>  <!-- box-body -->
+              <div class="box-footer text-right">
+                <div class="btn btn-success btn-rounded btn-line">
+                  + Add place
+                </div>
+              </div>  <!-- box-footer -->
+            </div>  <!-- box -->
+          </div>  <!-- col-xs-12 col-sm-6 -->
+          <div class="col-xs-12 col-sm-12 col-md-6 hidden-sm hidden-xs">
+            <app-provider-place-details ng-show="ctrl.detailsViewMode === ctrl.VIEW_PLACE_DETAIL"></app-provider-place-details>
+            <app-providers-event-details ng-show="ctrl.detailsViewMode === ctrl.VIEW_EVENT_DETAIL"></app-providers-event-details>
+          </div>
+        </div>  <!-- row -->
+      </div>  <!-- box-wrp white shadow -->
+    </div>  <!-- container-boxs -->
+  </div>  <!-- container-fluid -->
+</main>
+
+<!-- profile modal -->
+<div class="modal-wrp modal-in" ng-if="false">
+    <div class="modal-header">
+        <a href="#" class="close-btn hidden-xs"></a>
+        <div class="media">
+            <div class="media-left media-middle">
+                <div class="img-circle img-circle-lg user-icon">
+                    <img src="" alt="">
+                </div>
+            </div><!-- media-left -->
+            <div class="media-body media-middle">
+                <div class="media-heading h4 font-medium">User nickname</div>
+                <p class="text-primary secondary font-regular mb-0">Firstname Lastname</p>
+            </div><!-- media-body -->
+        </div><!-- media -->
+    </div>
+    <form action="">
+        <div class="modal-body">
+            <div class="form form-landing">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder='user nickname' value='User nickname'>
+                </div><!-- form-group -->
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder='user Firstname' value='Firstname'>
+                    </div>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder='user Lastname' value='Lastname'>
+                    </div>
+                </div><!-- form-group -->
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder='user email' value='email@gmail.com' >
+                </div><!-- form-group -->
+                <div class="form-group">
+                    <input type="number" class="form-control" placeholder='phone number' value='380660660606'>
+                </div><!-- form-group -->
+            </div><!-- form -->
+        </div><!-- modal-body -->
+        <div class="modal-footer">
+            <div class="btn-wrp text-right slim">
+                <a href="#" class="btn btn-warning btn-rounded btn-line">Cancel</a>
+                <a href="#" class="btn btn-success btn-rounded btn-line">Save</a>
+            </div>
+        </div><!-- modal-footer -->
+    </form>
+</div> <!-- modal-wrp -->
+<div class="backdrop"></div>
+
+</div>

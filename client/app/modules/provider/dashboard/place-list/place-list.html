@@ -1,0 +1,50 @@
+<div class="list-iteml media media-flex" ng-click="ctrl.listItemClick($event)">
+  <div class="media-left media-middle">
+    <a href="#" class="img-circle">
+      <img
+          class="media-object"
+          ng-show="!!ctrl.place.img"
+          ng-src="{{ctrl.place.img}}"
+          alt=""
+      >
+    </a>
+  </div> <!-- media-left -->
+  <div class="media-body media-middle">
+    <label class="title h4">{{ctrl.place.title}}</label>
+    <p class="subtitle">{{ctrl.place.location.address}}</p>
+  </div>  <!-- media-body -->
+
+  <div class="media-right media-middle text-right">
+    <ul class="list-inline list-clear list-divide">
+      <li>
+        <p class="text-primary">
+          <span class="secondary p-r-xs">Nearest event</span>
+          {{ctrl.place.upcoming_event_date | date: 'MMMM d, yyyy HH:mm a' || 'No upcoming events'}}
+        </p>
+      </li>
+      <li>
+        <div class="tooltip-wrp">
+          <div class="icon-wrp">
+            <i class="fa fa-circle icon-star toggle-plus"></i>
+            <span class="p-l-sm">{{ctrl.place.events_count}}</span>
+          </div>
+
+          <div class="tooltip-body">
+            <div class="tooltip-inner arrow arrow-top arrow-right">
+              <ul class="nav">
+                <li>
+                  <a href="#" class="dropdown-item" ng-click="ctrl.showEventAdd()">Add event</a>
+                </li>
+                <li>
+                  <a href="#" class="dropdown-item" ng-click="ctrl.openConfirmModal()">Delete place</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </li>
+    </ul>
+  </div> <!-- media-left -->
+
+</div>  <!-- media -->

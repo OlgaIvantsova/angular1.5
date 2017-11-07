@@ -1,0 +1,63 @@
+.form-wrp{
+    padding: 0;
+    max-width: 600px;
+    position: relative;
+    .content{
+        .login &{
+            margin: 0;
+            background: @none;
+            width: 100%;
+            float: none;
+            padding: 0;
+            display: block;
+        }
+    }
+    .form-body,
+    .form-header,
+    .form-footer{
+        background: @gray-light;
+        padding: 1.5rem;
+        display: inline-block;
+        width: 100%;
+    }
+    .form-body{
+        background: @white;
+        .form-landing{
+            display: block;
+            margin: -1.5rem -1.5rem -1.9rem;
+            .form-control{
+                border-width: 1px;
+                border-color: #f6f7f9;
+                border-radius: 0;
+                padding: 2rem;
+                height: auto;
+                line-height: inherit;
+                margin-bottom: 1px;
+            }
+            md-input-container{
+                padding: 0 !important;
+            }
+            .md-errors-spacer{
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                text-align: center;
+            }
+            md-input-container label:not(.md-no-float):not(.md-container-ignore){
+                .translate3d-sacle(20px, 48px, 0, 1);
+                z-index: 10;
+                width: auto;
+            }
+            md-input-container.md-input-focused label:not(.md-no-float),
+            md-input-container.md-input-has-placeholder label:not(.md-no-float),
+            md-input-container.md-input-has-value label:not(.md-no-float){
+                color: @primary;
+                .translate3d-sacle(10px, 31px, 0px, 0.75);
+            }
+        }
+    }
+    .form-header{
+        color: @default;
+    }
+}

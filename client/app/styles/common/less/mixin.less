@@ -1,0 +1,64 @@
+.text-shadow(@shadow: @text-left @text-top @text-blur @text-color;) {
+	-o-text-shadow: @shadow;
+	-ms-text-shadow: @shadow;
+    -webkit-text-shadow: @shadow;
+    -moz-text-shadow: @shadow;
+    text-shadow: @shadow;
+}
+.rotate(@rotate: rotate( @deg );){
+	-o-transform: @rotate;
+	-moz-trans: @rotate;
+	-ms-transform: @rotate;
+	-webkit-transform: @rotate;
+	transform: @rotate;
+}
+.animation(@speed: all @sec ease;) {
+    -webkit-transition: @speed;
+    -moz-transition: @speed;
+    -ms-transition: @speed;
+    -o-transition: @speed;
+    transition: @speed;
+}
+.border-radius(@rorder-rad: @radius @radius @radius @radius ) {
+	-o-border-radius: @rorder-rad;
+	-ms-border-radius: @rorder-rad;
+    -webkit-border-radius: @rorder-rad;
+    -moz-border-radius: @rorder-rad;
+    border-radius: @rorder-rad;
+}
+.box-shadow(@x; @y; @b; @w; @color; @opacity) {
+   box-shadow: @x @y @b @w fade(@color, @opacity);
+   -o-box-shadow: @x @y @b @w fade(@color, @opacity);
+   -moz-box-shadow: @x @y @b @w fade(@color, @opacity);
+   -ms-box-shadow: @x @y @b @w fade(@color, @opacity);
+   -webkit-box-shadow: @x @y @b @w fade(@color, @opacity);
+}
+
+.translate (@x, @y:0) {
+	-webkit-transform:       translate(@x, @y);
+	-moz-transform: 	 translate(@x, @y);
+	-ms-transform: 		 translate(@x, @y);
+	-o-transform: 		 translate(@x, @y);
+	transform: 		 translate(@x, @y);
+}
+.scale(@x) {
+	-webkit-transform:       scale(@x);
+	-moz-transform: 	 scale(@x);
+	-ms-transform: 		 scale(@x);
+	-o-transform: 		 scale(@x);
+	transform: 		 scale(@x);
+}
+.translate3d-sacle(@x, @y:0, @z, @scale){
+	-webkit-transform:       translate3d(@x, @y, @z) scale(@scale);
+	-moz-transform: 	 translate3d(@x, @y, @z) scale(@scale);
+	-ms-transform: 		 translate3d(@x, @y, @z) scale(@scale);
+	-o-transform: 		 translate3d(@x, @y, @z) scale(@scale);
+	transform: 		 translate3d(@x, @y, @z) scale(@scale);
+}
+
+.calc(@prop; @val) {
+  @{prop}: calc(~'@{val}');
+  @{prop}: -moz-calc(~'@{val}');
+  @{prop}: -webkit-calc(~'@{val}');
+  @{prop}: -o-calc(~'@{val}');
+}

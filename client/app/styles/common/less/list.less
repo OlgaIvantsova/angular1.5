@@ -1,0 +1,34 @@
+.list-inline{
+    @media (max-width: 1199px) {
+        margin: 0 1rem;
+    }
+    &.list-clear{
+        li{
+            padding: 0;
+        }
+    }
+    &.list-divide{
+        & > li{
+            & + li{
+                &:before{
+                    content: '';
+                    height: 24px;
+                    width: 2px;
+                    background: @primary-hover;
+                    display: inline-block;
+                    margin: 0 1rem;
+                    vertical-align: -45%;
+                    @media (max-width: 1200px) {
+                        margin: 0 .5rem;
+                    }
+                }
+            }
+        }
+    }
+}
+.list-landing-xs{
+    @media (max-width: 767px){
+        display: inline-block;
+        width: 100%;
+    }
+}

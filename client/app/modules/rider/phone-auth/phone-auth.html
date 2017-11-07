@@ -1,0 +1,54 @@
+<div class="app wrapper wrapper-mobile">
+<main>
+  <div class="container-fluid main-container">
+    <section class="section-home">
+      <div class="centered-wrp text-center">
+        <form name="phoneForm" ng-submit="ctrl.submitPhone()" ng-if="!ctrl.isCodeConfirmOpen">
+          <div class="title title-md h5 font-light">Enter your mobile phone number</div>
+          <div class="form-group text-primary phone-group">
+            <input type="text" class="form-control text-center" placeholder="5124680378"
+                   name="phone" ng-model="ctrl.phoneNumber"
+                   required="true" ng-minlength="2" ng-pattern="/\d{10}/g">
+            <div ng-show="!phoneForm.$valid && phoneForm.$dirty">
+              <div class="error" ng-show="phoneForm.phone.$error.required">The field is required!</div>
+              <div class="error" ng-show="phoneForm.phone.$error.pattern">Phone number contains 10 digits</div>
+            </div>
+          </div>
+          <div class="btn-wrp">
+            <button ng-disabled="!phoneForm.$valid || ctrl.pendingRequest" type="submit"
+                    class="btn btn-primary btn-fill btn-rounded"
+            >
+              <i class="fa fa-pulse fa-spinner" ng-show="ctrl.pendingRequest"></i>
+              Receive code
+            </button>
+          </div>
+        </form>
+        <!--code form-->
+        <form name="codeForm" ng-submit="ctrl.submitCode()" ng-If="ctrl.isCodeConfirmOpen">
+          <div class="title title-md h5 font-light">Enter the sms code</div>
+          <div class="form-group text-primary phone-group">
+            <input type="text" class="form-control text-center" placeholder="512468" name="code"
+                   ng-model="ctrl.codeNumber" required="true" ng-minlength="2" ng-pattern="/\w{6}/g">
+            <div ng-show="!codeForm.$valid && phoneForm.$dirty">
+              <div class="error" ng-show="codeForm.code.$error.required">The field is required!</div>
+              <div class="error" ng-show="codeForm.code.$error.pattern">Code contains 6 chars</div>
+            </div>
+            <span class="error" ng-if="ctrl.showCodeMsg">The code is incorrect</span>
+          </div>
+          <div class="btn-wrp">
+            <button ng-disabled="!codeForm.$valid || ctrl.pendingRequest"  type="submit"
+                    class="btn btn-primary btn-fill btn-rounded"
+            >
+              <i class="fa fa-pulse fa-spinner" ng-show="ctrl.pendingRequest"></i>
+              Send code
+            </button>
+          </div>
+          <a href="#" ng-click="ctrl.submitPhone()">
+            <span class="error">SEND CODE REQUEST ONE MORE TIME</span>
+          </a>
+        </form>
+      </div>
+    </section>
+  </div>
+</main>
+</div>

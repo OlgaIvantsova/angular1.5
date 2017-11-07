@@ -1,0 +1,127 @@
+<div class="event-details event-edit">
+  <div class="box box-footer-fixed">
+    <div class="box-header">
+      <label class="title h3">{{::ctrl.activeEvent.title || 'Add event'}} </label>
+      <p class="subtitle">{{::ctrl.activeEvent.place_data.location.address}}</p>
+    </div>  <!-- box-header -->
+
+    <form action="" novalidate name="formEvent">
+      <div class="box-body">
+      <div class="hr border border-top"></div>
+      <div class="card-wrp text-center">
+        <div class="card-item">
+          <div class="card-wrp-align">
+            <div class="card-header">
+              <div class="upload-img-wrp">
+                  <div href="#" class="img-circle img-circle-large-icon img-circle-xl img-circle-inline">
+                      <img class="media-object mCS_img_loaded" ng-src="{{ctrl.activeEvent.img}}">
+                  </div>
+                  <!--<div class="upload-file-wrp">-->
+                      <!--<input type="file">-->
+                      <!--<div class="btn btn-info btn-fill btn-rounded btn-icon">-->
+                          <!--<i class="fa fa-image fa-lg"></i>-->
+                      <!--</div>-->
+                  <!--</div>-->
+
+              </div>
+              <label class="title h4 landing text-center">
+                <input
+                    type="text"
+                    class="form-control form-control-clear"
+                    ng-model="ctrl.activeEvent.title"
+                    placeholder="Enter title"
+                    required
+                >
+                <error ng-show="ctrl.errors.title" md-auto-hide="false" ng-bind="ctrl.errors.title" />
+              </label>
+              <div class="hr hr-xl border border-top"></div>
+            </div>
+            <div class="card-body">
+              <div class="table table-clear">
+                <div class="form-group">
+                  <span class='text-uppercase inline'><b>DATE start:</b></span>
+                  <div class="date inline">
+                    <input type="date"
+                           class="form-control form-control-clear"
+                           ng-model="ctrl.activeEvent.start_time"
+                           required
+                    >
+                    <error ng-show="ctrl.errors.start_time" md-auto-hide="false" ng-bind="ctrl.errors.start_time" />
+                  </div>
+                  <div class="date inline">
+                    <input type="time"
+                           class="form-control form-control-clear"
+                           ng-model="ctrl.activeEvent.start_time"
+                           required
+                    >
+                  </div>
+                </div> <!-- form-group -->
+                <div class="form-group">
+                  <span class='text-uppercase inline'><b>date end:</b></span>
+                  <div class="date inline">
+                    <input type="date"
+                           class="form-control form-control-clear"
+                           ng-model="ctrl.activeEvent.end_time"
+                           required
+                    >
+                    <error ng-show="ctrl.errors.end_time" md-auto-hide="false" ng-bind="ctrl.errors.end_time" />
+                  </div>
+                  <div class="date inline">
+                    <input type="time"
+                           class="form-control form-control-clear"
+                           ng-model="ctrl.activeEvent.end_time"
+                           required
+                    >
+                  </div>
+                </div> <!-- form-group -->
+                <div class="form-group">
+                  <span class='text-uppercase inline'><b>sms details:</b></span>
+                  <input type="text"
+                         class="form-control form-control-clear"
+                         ng-model="ctrl.activeEvent.sms_details"
+                         placeholder="Enter sms details"
+                         required
+                  />
+                  <error ng-show="ctrl.errors.sms_details" md-auto-hide="false" ng-bind="ctrl.errors.sms_details" />
+                </div><!-- form-group -->
+                <div class="form-group form-group-row">
+                  <label class='text-uppercase'><b>description:</b></label>
+                  <span>
+                    <textarea name="name"
+                              class="form-control form-control-clear"
+                              rows="2"
+                              cols="80"
+                              ng-model="ctrl.activeEvent.description"
+                              placeholder="Enter description"
+                              required
+                    >
+                    </textarea>
+                    <error ng-show="ctrl.errors.description" md-auto-hide="false" ng-bind="ctrl.errors.description" />
+                  </span>
+                </div><!-- form-group -->
+              </div>
+            </div> <!-- card-body -->
+          </div> <!-- card-align -->
+
+          <div class="box-footer box-bottom text-right">
+            <div class="btn btn-info btn-rounded btn-line"
+                 ng-show="ctrl.isMobileVersion()"
+                 ng-click="ctrl.backToPlaceList()">
+              Back to place list
+            </div>
+
+            <div class="btn btn-warning btn-rounded btn-line" ng-click="ctrl.handleCancelEventClick()">
+              Cancel
+            </div>
+            <div class="btn btn-success btn-rounded btn-line" ng-click="ctrl.handleSaveEventClick()">
+              Save
+            </div>
+          </div>  <!-- box-footer -->
+
+        </div> <!-- card -->
+      </div> <!-- card-wrp -->
+    </div>  <!-- box-body -->
+    </form>
+
+  </div> <!-- box -->
+</div> <!-- event-details -->

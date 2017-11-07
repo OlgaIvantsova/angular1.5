@@ -1,0 +1,47 @@
+@import './auth';
+@import './login';
+@import './places';
+@import './profile';
+
+.logo {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+}
+
+.content {
+  display: flex;
+  max-width: 1100px;
+  margin-top: 70px;
+}
+
+.form-provider {
+  padding: 40px 60px;
+
+  .md-select-value.md-select-placeholder,
+  md-input-container,
+  md-input-container.md-input-focused {
+    margin-bottom: 10px;
+
+    label, input {
+      border-bottom-color: white !important;
+      color: white !important;
+    }
+
+    error {
+      color: $Aqua;
+      padding: 5px 5px;
+      font-size: 10px;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+.btn-green {
+  background-color: $PastelGreen !important;
+  color: white !important;
+
+  &:hover {
+    background-color: $Emerald !important;
+  }
+}

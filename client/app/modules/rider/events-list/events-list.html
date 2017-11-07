@@ -1,0 +1,119 @@
+<div class="phone">
+  <div class="phone__screen">
+    <div class="phone__scroll-cont">
+      <div class="phone__content">
+        <div ng-repeat="event in ctrl.events" class="card" ng-click="ctrl.setCardActive($event, event)">
+            <div class="card__map">
+              <div class="card__map__inner"></div>
+            </div>
+            <section class="card__part card__part-1">
+              <div class="card__part__inner">
+                <header class="card__header">
+                  <div class="card__header__close-btn" ng-click="ctrl.closeCard($event)"></div>
+                  <span class="card__header__id">{{event.title}}</span>
+                </header>
+                <div class="card__stats" >
+                  <app-map markers="ctrl.markers"></app-map>
+                  <div class="card__stats__item card__stats__item--req">
+                    <span class="card__stats__value">Distance</span>
+                  </div>
+                  <div class="card__stats__item card__stats__item--pledge">
+                    <span class="card__stats__value">{{event.distance}} miles</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section class="card__part card__part-2">
+              <div class="card__part__side m--back">
+                <div class="card__part__inner card__face">
+                  <div class="card__face__colored-side"></div>
+                  <div class="card__face__divider"></div>
+                  <div class="card__face__path"></div>
+                  <div class="card__face__from-to">
+                    <p class="ng-binding">{{ctrl.place.formatted_address}}</p>
+                    <p class="ng-binding">{{event.place_data.location.address}}</p>
+                  </div>
+                  <div class="card__face__deliv-date">
+                    {{event.start_time | date: 'dd MMM'}}
+                    <p class="ng-binding">{{event.start_time | date: 'hh mm a'}}</p>
+                  </div>
+                  <div class="card__face__stats card__face__stats--req">
+                    Title
+                    <p class="ng-binding">{{event.title}}</p>
+                  </div>
+                  <div class="card__face__stats card__face__stats--pledge">
+                    Distance
+                    <p class="ng-binding">{{event.distance}} miles</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card__part__side m--front">
+                <div class="card__sender">
+                  <h4 class="card__sender__heading">Event</h4>
+                  <div class="card__sender__img-cont">
+                    <div class="card__sender__img-cont__inner">
+                      <img ng-src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-sender.jpg" class="card__sender__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-sender.jpg">
+                    </div>
+                  </div>
+                  <div class="card__sender__name-and-rating">
+                    <p class="card__sender__name ng-binding">{{event.description}}</p>
+                  </div>
+                  <div class="card__receiver">
+                    <div class="card__receiver__inner">
+                      <div class="card__sender__img-cont">
+                        <div class="card__sender__img-cont__inner">
+                          <img ng-src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-sender.jpg" class="card__sender__img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/deliv-sender.jpg">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card__path-big"></div>
+                </div>
+                <div class="card__from-to">
+                  <div class="card__from-to__inner">
+                    <div class="card__text card__text--left">
+                      <p class="card__text__heading">From</p>
+                      <p class="card__text__middle">{{ctrl.place.formatted_address}}</p>
+                    </div>
+                    <div class="card__text card__text--right">
+                      <p class="card__text__heading">To</p>
+                      <p class="card__text__middle ng-binding">{{event.place_data.location.address}}</p>
+                    </div>
+                  </div>
+                </div>
+                <section class="card__part card__part-3">
+                  <div class="card__part__side m--back"></div>
+                  <div class="card__part__side m--front">
+                    <div class="card__timings">
+                      <div class="card__timings__inner">
+                        <div class="card__text card__text--left">
+                          <p class="card__text__heading">Start time</p>
+                          <p class="card__text__middle">{{event.start_time | date: 'dd MMM'}}</p>
+                          <p class="card__text__middle">{{event.start_time | date: 'HH:mm'}}</p>
+                        </div>
+                        <div class="card__text card__text--right">
+                          <p class="card__text__heading">End time</p>
+                          <p class="card__text__middle">{{event.end_time | date: 'dd MMM'}}</p>
+                          <p class="card__text__middle">{{event.end_time | date: 'HH:mm'}}</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card__timer">60 min 00 sec</div>
+                    <section class="card__part card__part-4">
+                      <div class="card__part__side m--back"></div>
+                      <div class="card__part__side m--front">
+                        <button type="button" class="card__request-btn" ng-click="ctrl.sendRequest($event, event)">
+                          <span class="card__request-btn__text-1">Request</span>
+                          <span class="card__request-btn__text-2">Start</span>
+                        </button>
+                      </div>
+                    </section>
+                  </div>
+                </section>
+              </div>
+            </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

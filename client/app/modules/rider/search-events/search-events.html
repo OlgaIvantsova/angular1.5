@@ -1,0 +1,45 @@
+<div class="app wrapper wrapper-mobile">
+  <main>
+    <div class="container-fluid main-container no-bg">
+      <section>
+        <div class="section-header">
+          <form novalidate name="searchForm" ng-submit="ctrl.search()">
+            <div class="form-group text-primary has-icon icon-right btn-left">
+                <app-rider-nav-menu></app-rider-nav-menu>
+              <input type="text" class="form-control form-control-lg form-control-clear placeholder-dark"
+                     placeholder="Enter your current location" id="autocomplete" name="place"
+                     ng-model="ctrl.searchValue"
+                     ng-change="ctrl.onSearchValueChange()"
+                     ng-disabled="ctrl.pendingRequest"
+                     required ng-minlength="2">
+              <div class="icon-wrp">
+                <button class="fa-btn"
+                        ng-disabled="!ctrl.location" type="submit"
+                        ng-if="!ctrl.pendingRequest"
+                >
+                  <i class="fa fa-search fa-2x"></i>
+                </button>
+
+                <button class="fa-btn"
+                        ng-if="ctrl.pendingRequest"
+                >
+                  <i class="fa fa-pulse fa-2x fa-spinner"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+
+        </div>
+        <div class="row-sm no-event" ng-if="ctrl.isEvents() && ctrl.events.length == 0">
+          <span class="error">No events are found. Try to change place</span>
+        </div>
+        <div ng-if="ctrl.isEvents()">
+          <app-events-list place="ctrl.location" events="ctrl.events"></app-events-list>
+        </div>
+        <div class="map-wrp" ng-if="ctrl.isMap()">
+            <app-map markers="ctrl.markers"></app-map>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>

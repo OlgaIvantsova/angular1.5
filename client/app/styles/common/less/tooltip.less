@@ -1,0 +1,110 @@
+.tooltip-wrp{
+    position: relative;
+    display: inline-block;
+    .icon-wrp{
+        span{
+            @media (max-width: 767px) {
+                padding-left: 0;
+                width: 15px;
+                display: inline-block;
+                text-align: center;
+            }
+        }
+    }
+    .tooltip-body{
+        min-width: 200px;
+        position: absolute;
+        top: 0;
+        right: -2px;
+        opacity: 0;
+        z-index: 4;
+        display: none;
+        .tooltip-inner{
+            position: relative;
+            padding: 0;
+            text-align: left;
+            border: 1px solid @default-dark;
+            background: @white;
+            @sec:.15s;
+            .animation;
+            @radius:4px;
+            .border-radius;
+            .box-shadow(0; 6px; 8px; 0; @default-dark; 20%);
+            .arrow;
+        }
+        .nav{
+            li{
+                padding: .4rem 0;
+                background: @none !important;
+                a{
+                    padding: .65rem 1.5rem;
+                    color: @default;
+                    @sec:.2s;
+                    .animation;
+                    &:hover{
+                        background: @default-dark;
+                    }
+                }
+                & + li{
+                    &:before{
+                        content: '';
+                        position: absolute;
+                        top: -1px;
+                        width: 90%;
+                        height: 1px;
+                        left: -100%;
+                        right: -100%;
+                        margin: auto;
+                        background: @gray-lighter !important;
+                    }
+                }
+            }
+        }
+    }
+    &:hover{
+        .icon-wrp{
+            .fa{
+                opacity: .7;
+            }
+        }
+        .tooltip-body{
+            top: 40%;
+            opacity: 1;
+            display: block;
+            padding-top: 20px;
+        }
+    }
+}
+.arrow{
+     &:before,
+     &:after{
+        content: '';
+        position: absolute;
+     }
+     &:before{
+        border-left: 5px solid @none;
+        border-right: 5px solid @none;
+        border-top: 0 solid @none;
+        border-bottom: 7px solid @white;
+        z-index: 2;
+        .arrow-top&{
+            top: -7px;
+        }
+        .arrow-right&{
+            right: 23px;
+        }
+    }
+    &:after{
+        border-left: 7px solid @none;
+        border-right: 7px solid @none;
+        border-top: 0 solid @none;
+        border-bottom: 8px solid @default-dark;
+        z-index: 1;
+        .arrow-top&{
+            top: -8px;
+        }
+        .arrow-right&{
+            right: 21px;
+        }
+    }
+}

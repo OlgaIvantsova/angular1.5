@@ -1,0 +1,83 @@
+<div class="place-details edit-place">
+  <div class="box box-footer-fixed">
+    <form action="" name="formPlace">
+      <div class="box-header">
+
+        <div class="upload-img-wrp">
+          <div href="#" class="img-circle img-circle-large-icon img-circle-xl img-circle-inline">
+            <img class="media-object mCS_img_loaded" ng-src="{{ctrl.activeEvent.img}}">
+          </div>
+          <div class="upload-file-wrp">
+            <input type="file" ng-model-instant onchange="angular.element(this).scope().setFiles(this)">
+            <div class="btn btn-info btn-fill btn-rounded btn-icon">
+              <i class="fa fa-image fa-lg"></i>
+            </div>
+          </div>
+        </div>
+
+        <label class="title h3">
+          <input
+              type="text"
+              class="form-control form-control-clear"
+              ng-model="ctrl.currentPlace.title"
+              name="title"
+              placeholder="Enter a title..."
+              required
+          >
+          <error ng-show="ctrl.errors.title" md-auto-hide="false" ng-bind="ctrl.errors.title" />
+        </label>
+        <label class="subtitle">
+          <input
+              type="text"
+              id="provider-autocomplete"
+              class="form-control form-control-clear"
+              placeholder="Enter a address..."
+              ng-model="ctrl.currentPlace.location.address"
+              name="address"
+              required
+          >
+          <error ng-show="ctrl.errors.location.address || ctrl.errors.location.point" md-auto-hide="false">
+            {{ctrl.errors.location.address}}
+            {{ctrl.errors.location.point}}
+          </error>
+        </label>
+
+      </div>  <!-- box-header -->
+      <div class="box-body">
+        <div class="hr border border-top"></div>
+        <div class="map-wrp">
+          <app-map markers="ctrl.placeMarkersEditMode"></app-map>
+        </div>
+        <div class="form-group text-center">
+          <div class="form-control-wrp icon icon-right">
+            <select
+                class="form-control form-control-rounded"
+                required
+                ng-model="ctrl.currentPlace.category"
+                ng-options="value as title for (value, title) in ctrl.categories"
+                name="category"
+                required
+            >
+              <option value="" disabled selected>Select option</option>
+            </select>
+            <i class="fa fa-angle-down fa-lg"></i>
+            <error ng-show="ctrl.errors.category" md-auto-hide="false" ng-bind="ctrl.errors.category" />
+          </div>
+        </div>
+      </div>  <!-- box-body -->
+      <div class="box-footer box-bottom text-right">
+        <div class="btn btn-info btn-rounded btn-line"
+             ng-show="ctrl.isMobileVersion()"
+             ng-click="ctrl.backToPlaceList()">
+          Back to place list
+        </div>
+        <div class="btn btn-warning btn-rounded btn-line" ng-click="ctrl.handleCancelPlaceClick()">
+          Cancel
+        </div>
+        <div class="btn btn-success btn-rounded btn-line" ng-click="ctrl.handleSavePlaceClick()">
+          Save
+        </div>
+      </div>  <!-- box-footer -->
+    </form>
+  </div> <!-- box -->
+</div> <!-- place-details -->

@@ -1,0 +1,25 @@
+<div class="nav-btn" ng-click="ctrl.toggleMenu()" ng-class="{active: ctrl.showMenu}">
+  <i class="fa fa-bars fa-2x"></i>
+</div>
+<div class="nav-wrp" ng-class="{active: ctrl.showMenu}">
+  <ul class="nav nav-lg">
+    <li>
+      <a href="#">
+        <i class="fa fa-user-o fa-lg"></i>
+        <span>About Us</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <i class="fa fa-phone fa-lg"></i>
+        <span>Contact Us</span>
+      </a>
+    </li>
+    <li>
+      <a href="#" ng-click="ctrl.logout()">
+        <i class="fa fa-sign-out fa-lg"></i>
+        <span>Logout</span>
+      </a>
+    </li>
+  </ul>
+</div>

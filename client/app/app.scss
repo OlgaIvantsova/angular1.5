@@ -1,0 +1,28 @@
+@import "./styles/variables";
+@import "./styles/provider/index";
+
+html, body {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  height: 100%;
+}
+// this is a lot like <md-content>
+.wrapper {
+  height: 100%;
+  display: block;
+  position: relative;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  background: linear-gradient(135deg, $BondyBlue 0%, $Aqua 50%, $Aquamarine 100%);
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+

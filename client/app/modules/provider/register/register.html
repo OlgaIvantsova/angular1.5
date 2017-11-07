@@ -1,0 +1,70 @@
+<div class="login auth">
+  <app-provider-nav-bar></app-provider-nav-bar>
+  <div class="form-wrp block-centered shadow shadow-lg">
+      <div class="content" layout="column" flex-offset="15">
+          <div class="form-header">
+             <label class="h4 font-medium"> Sign Up</label>
+          </div><!-- form-header -->
+          <form class="form-inner" name="formProvider">
+              <div class="form-body">
+                  <div class="row form form-landing error-static">
+                      <div class="form-group">
+                          <md-input-container>
+                              <!-- <label>First Name</label> -->
+                              <input class="form-control" ng-model="ctrl.data.first_name" placeholder="First Name">
+                              <error ng-show="ctrl.errors.first_name" md-auto-hide="false" ng-bind="ctrl.errors.first_name" />
+                          </md-input-container>
+                      </div>
+                      <div class="form-group">
+                          <md-input-container>
+                              <!-- <label>Last Name</label> -->
+                              <input class="form-control" ng-model="ctrl.data.last_name" placeholder="Last Name">
+                              <error ng-show="ctrl.errors.last_name" md-auto-hide="false" ng-bind="ctrl.errors.last_name" />
+                          </md-input-container>
+                      </div>
+                      <div class="form-group">
+                          <md-input-container>
+                              <!-- <label>Email*</label> -->
+                              <input
+                                  type="email"
+                                  class="form-control"
+                                  ng-model="ctrl.data.email"
+                                  placeholder="Email*"
+                                  required
+                              >
+                              <error ng-show="ctrl.errors.email" md-auto-hide="false" ng-bind="ctrl.errors.email" />
+                          </md-input-container>
+                      </div>
+                      <div class="form-group">
+                          <md-input-container>
+                              <!-- <label>Password*</label> -->
+                              <input class="form-control"
+                                     ng-model="ctrl.data.password"
+                                     type="password"
+                                     placeholder="Password*"
+                                     required
+                              >
+                              <error ng-show="ctrl.errors.password" md-auto-hide="false" ng-bind="ctrl.errors.password" />
+                          </md-input-container>
+                      </div>
+                      <div class="form-group">
+                          <md-input-container>
+                              <input
+                                  type="text"
+                                  class="form-control"
+                                  placeholder='phone number'
+                                  ng-model="ctrl.form.data.phone_number"
+                                  placeholder="User Phone"
+                              >
+                              <error ng-show="ctrl.form.errors.phone_number" md-auto-hide="false" ng-bind="ctrl.form.errors.phone_number"/>
+                          </md-input-container>
+                      </div>
+              </div><!-- form-body -->
+              <div class="form-footer">
+                  <md-button class="btn btn-default btn-rounded btn-line md-raised landing" layout-fill ng-click="ctrl.handlerRegisterClick()">Sign Up</md-button>
+              </div><!-- form-footer -->
+          </form>
+      </div><!-- content -->
+  </div><!-- form-wrp -->
+
+</div>

@@ -1,0 +1,21 @@
+.card-item{
+    max-width: 370px;
+    display: inline-block;
+    padding: 1.5rem 0;
+    .card-img-align{
+        @media (min-height: 845px) {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            .translate(-50%, -50%);
+            width: 100%;
+            margin-left: -1.8rem;
+            max-width: 370px;
+        }
+    }
+    .card-img-wrp{
+       position: relative;
+       max-width: 190px;
+       margin: 0 auto;
+    }
+}

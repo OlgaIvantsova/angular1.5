@@ -1,0 +1,33 @@
+<div class="place-details" ng-if="ctrl.detailsViewMode != 'VIEW_PLACE_EDIT'">
+  <div class="box box-footer-fixed">
+    <div class="box-header">
+      <label class="title h3">{{ctrl.currentPlace.title}}</label>
+      <p class="subtitle">{{ctrl.currentPlace.location.address}}</p>
+    </div>  <!-- box-header -->
+    <div class="box-body">
+      <div class="hr border border-top"></div>
+
+      <div class="map-wrp">
+        <app-map markers="ctrl.placeMarkers"></app-map>
+      </div>
+
+      <div class="form-group text-center">
+        <label class="h5 text-primary">
+          <span class="font-light">Category:</span>
+          {{ctrl.currentPlace.category}}
+        </label>
+      </div>
+    </div>  <!-- box-body -->
+    <div class="box-footer box-bottom text-right">
+      <div class="btn btn-info btn-rounded btn-line"
+           ng-show="ctrl.isMobileVersion()"
+           ng-click="ctrl.backToPlaceList()">
+        Back to place list
+      </div>
+
+      <div class="btn btn-primary btn-rounded btn-line" ng-click="ctrl.showPlaceEdit()">
+        Edit
+      </div>
+    </div>  <!-- box-footer -->
+  </div> <!-- box -->
+</div> <!-- place-details -->

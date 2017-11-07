@@ -1,0 +1,120 @@
+.modal-wrp{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    background: @white;
+    z-index: 1001;
+    width: 100%;
+    max-width: 600px;
+    .translate(-50%, -50%);
+    .slim{
+        padding: 0 !important;
+    }
+    .close-btn{
+        position: absolute;
+        top: -30px;
+        right: -30px;
+        width: 30px;
+        height: 30px;
+    }
+    &.modal-rel{
+        @media (max-height: 560px) {
+            position: relative;
+            top: 0;
+            left: 0;
+            margin: 0 auto;
+            .translate(0, 100px);
+            z-index: 10;
+        }
+    }
+}
+.modal-header,
+.modal-footer{
+    background: @gray-light;
+    border-width: 0;
+}
+.modal-body{
+
+}
+.backdrop{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: @default;
+    opacity: .6;
+    z-index: 1000;
+    display: none;
+    .modal-in + &{
+        display: block;
+    }
+}
+.smoke-confirm{
+    &.smoke-base{
+        background: rgba(76, 94, 112, 0.6);
+        .dialog{
+            margin: 0;
+            width: 100%;
+            max-width: 600px;
+            top: 50%;
+            left: 50%;
+            .translate(-50%,-50%);
+            box-shadow: 0 0 0 0 @none;
+            background: @white;
+            .dialog-inner{
+                padding: 0;
+                color: @default;
+                .confirm__header,
+                .dialog-buttons{
+                    padding: 1.5rem;
+                    background: #f6f7f9;
+                    border-width: 0
+                }
+                .confirm__header{
+                    font-family: "sf_ui__b";
+                }
+                .confirm__body{
+                    font-family: "sf_ui__r";
+                    position: relative;
+                    padding: 1.5rem;
+                }
+                .dialog-buttons{
+                    margin: 0;
+                    button{
+                        .btn;
+                        .btn-rounded;
+                        .btn-line;
+                        color: @warning;
+                        border-color: @warning;
+                        & + button{
+                            @media (max-width: 767px) {
+                                margin-top: 1rem;
+                            }
+                        }
+                        &:hover{
+                            color: @warning;
+                            border-color: @warning;
+                            background: @warning;
+                        }
+                        &.cancel{
+                            color: @success;
+                            background: @none;
+                            border-color: @success;
+                            &:hover{
+                                color: @white;
+                                background: @success;
+                                border-color: @success;
+                            }
+                        }
+                    }
+                }
+            }
+            br{
+                display: none !important;
+            }
+        }
+    }
+}

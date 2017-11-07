@@ -1,0 +1,109 @@
+<div class="app wrapper">
+  <app-provider-nav-bar is-user-dropdown-show="true"></app-provider-nav-bar>
+
+  <main>
+    <div class="container-fluid">
+      <div class="container-boxs">
+        <div class="box-wrp white shadow">
+          <div class="row row-flex">
+            <div class="col-xs-12 col-sm-12 col-md-6 {{!ctrl.isShowPlaceList ? 'hidden-sm  hidden-xs' : ''}}">
+              <div class="box border right">
+                <div class="box-header">
+                  <label class="title h3">Places list</label>
+                  <p class="subtitle">The list of places including events</p>
+                </div>  <!-- box-header -->
+                <div class="box-body shadow-inner">
+                  <div class="scroll-box primary row-xl no_draggerRail " data-mcs-theme="dark">
+                    <ul class='nav nav-list toggle-list'>
+                      <li
+                          class="{{ctrl.activePlace.id === place.id ? 'active' : ''}}"
+                          ng-repeat="place in ctrl.places track by place.id"
+                      >
+                        <app-provider-place-list
+                            is-show-place-list="ctrl.isShowPlaceList"
+                            place="place"
+                            handler-click-place="ctrl.handlerClickPlace(place.id)"
+                            open-confirm-modal="ctrl.openConfirmModal(place.id)"
+                            show-event-add="ctrl.showEventAdd(place.id, place.location.address)"
+                        ></app-provider-place-list>
+
+                        <div class="collapse-wrp">
+                          <div class="collapse-body">
+                            <div class="media-inner ">
+                              <div class="media-list history-list">
+                                <div
+                                    class="media {{!event.has_ended ? 'media-warning' : 'media-disabled'}}"
+                                    ng-repeat="event in ctrl.events track by event.id"
+                                    ng-click="ctrl.handlerEventClick(event.id)"
+                                >
+                                  <app-provider-event-list
+                                      event="event"
+                                  ></app-provider-event-list>
+                                </div>  <!-- media -->
+                              </div>
+                            </div><!-- media-inner -->
+                          </div>  <!-- collapse-body -->
+                        </div> <!-- collapse-wrp -->
+
+                      </li>   <!-- li -->
+                    </ul>   <!-- ul -->
+                  </div>  <!-- mCustomScrollbar -->
+                </div>  <!-- box-body -->
+                <div class="box-footer text-right">
+                  <div class="btn btn-success btn-rounded btn-line" ng-click="ctrl.showPlaceAdd()">
+                    + Add place
+                  </div>
+                  <div class="btn btn-info btn-rounded btn-line {{!ctrl.isMobileVersion() || !ctrl.isShowPlaceList || !ctrl.activePlace.id ? 'hide hidden-sm  hidden-xs' : ''}}"
+                       ng-click="ctrl.showPlaceDetailsMobile()">
+                    + View place
+                  </div>
+                </div>  <!-- box-footer -->
+              </div>  <!-- box -->
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-6 {{ctrl.isShowPlaceList ? 'hidden-sm  hidden-xs' : ''}}">
+              <app-provider-place-details
+                  ng-if="ctrl.detailsViewMode === ctrl.VIEW_PLACE_DETAIL"
+                  current-place="ctrl.activePlace"
+                  show-place-edit="ctrl.showPlaceEdit()"
+                  place-markers="ctrl.placeMarkers"
+                  is-mobile-version="ctrl.isMobileVersion()"
+                  back-to-place-list="ctrl.backToPlaceList()"
+              ></app-provider-place-details>
+
+              <app-provider-place-edit
+                  ng-if="ctrl.detailsViewMode === ctrl.VIEW_PLACE_EDIT"
+                  current-place="ctrl.activePlace"
+                  categories="ctrl.categories"
+                  success-update-place="ctrl.successUpdatePlace()"
+                  parent-actions="ctrl.actions"
+                  is-mobile-version="ctrl.isMobileVersion()"
+                  back-to-place-list="ctrl.backToPlaceList()"
+              ></app-provider-place-edit>
+
+              <app-provider-event-details
+                  ng-if="ctrl.detailsViewMode === ctrl.VIEW_EVENT_DETAIL"
+                  active-event="ctrl.activeEvent"
+                  show-event-edit="ctrl.showEventEdit()"
+                  open-confirm-remove-event="ctrl.openConfirmRemoveEvent()"
+                  is-mobile-version="ctrl.isMobileVersion()"
+                  back-to-place-list="ctrl.backToPlaceList()"
+              ></app-provider-event-details>
+
+              <app-provider-event-edit
+                  ng-if="ctrl.detailsViewMode === ctrl.VIEW_EVENT_EDIT"
+                  active-event="ctrl.activeEvent"
+                  parent-actions="ctrl.actions"
+                  success-update-event="ctrl.successUpdateEvent()"
+                  show-event-details="ctrl.showEventDetails()"
+                  is-mobile-version="ctrl.isMobileVersion()"
+                  back-to-place-list="ctrl.backToPlaceList()"
+              ></app-provider-event-edit>
+            </div>
+          </div>  <!-- row -->
+        </div>  <!-- box-wrp white shadow -->
+      </div>  <!-- container-boxs -->
+    </div>  <!-- container-fluid -->
+  </main>
+
+</div>

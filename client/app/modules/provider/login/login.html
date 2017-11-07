@@ -1,0 +1,46 @@
+<div class="login auth">
+  <app-provider-nav-bar></app-provider-nav-bar>
+
+  <div class="form-wrp block-centered shadow shadow-lg">
+      <div class="content">
+          <div class="form-header">
+              <label class="h4 font-medium">Log In</label>
+          </div><!-- form-header -->
+          <form class="form-inner" name="formProvider">
+              <div class="form-body">
+                  <div class="row form form-landing error-static">
+                      <div class="form-group">
+                          <md-input-container>
+                              <!-- <label>Email</label> -->
+                              <input
+                                  type="email"
+                                  class='form-control'
+                                  ng-model="ctrl.data.email"
+                                  placeholder='Email'
+                                  required
+                              >
+                              <error ng-show="ctrl.errors.email" md-auto-hide="false" ng-bind="ctrl.errors.email" />
+                          </md-input-container>
+                      </div>
+                      <div class="form-group">
+                          <md-input-container>
+                              <!-- <label>Password</label> -->
+                              <input
+                                  class='form-control'
+                                  type="password"
+                                  ng-model="ctrl.data.password"
+                                  placeholder='Password'
+                                  required
+                              >
+                              <error ng-show="ctrl.errors.password" md-auto-hide="false" ng-bind="ctrl.errors.password" />
+                          </md-input-container>
+                      </div>
+                  </div>
+              </div><!-- form-body -->
+              <div class="form-footer">
+                  <md-button class="btn btn-primary btn-rounded btn-line md-raised landing" layout-fill ng-click="ctrl.handlerLoginClick()">Log In</md-button>
+              </div><!-- form-footer -->
+          </form>
+      </div><!-- content -->
+  </div><!-- form-wrp -->
+</div>

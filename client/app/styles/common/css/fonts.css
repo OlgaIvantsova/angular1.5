@@ -1,0 +1,40 @@
+@font-face {
+    font-family: 'sf_ui__b';
+    src: url('../fonts/bold/sfuitext-bold-webfont.woff2') format('woff2'),
+         url('../fonts/bold/sfuitext-bold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'sf_ui__l';
+    src: url('../fonts/light/sfuitext-light-webfont.woff2') format('woff2'),
+         url('../fonts/light/sfuitext-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'sf_ui__m';
+    src: url('../fonts/medium/sfuitext-medium-webfont.woff2') format('woff2'),
+         url('../fonts/medium/sfuitext-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'sf_ui__r';
+    src: url('../fonts/reg/sfuitext-regular-webfont.woff2') format('woff2'),
+         url('../fonts/reg/sfuitext-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'sf_ui__sb';
+    src: url('../fonts/semi/sfuitext-semibold-webfont.woff2') format('woff2'),
+         url('../fonts/semi/sfuitext-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}

@@ -1,0 +1,32 @@
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 11;
+    &.header-white{
+        background: @white;
+    }
+    .navbar-brand{
+        height: auto;
+        padding: 1.5rem 0px;
+        @media (max-width: 767px) {
+            padding: .9rem 0;
+        }
+    }
+    .nav{
+        &.nav-right{
+            padding: 8px 0px;
+            margin-right: -2.5rem;
+            position: relative;
+            @media (max-width: 767px) {
+                padding: 0;
+            }
+        }
+        &.header-nav{
+            ul{
+                margin-bottom: 0;
+            }
+        }
+    }
+}

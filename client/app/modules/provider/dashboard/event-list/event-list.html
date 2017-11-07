@@ -1,0 +1,26 @@
+<div class="media-left media-date media-middle">
+  <span class="text-gray secondary fz-xs">
+      {{ctrl.event.start_time | date: 'HH:mm a'}}
+  </span>
+</div> <!-- media-left -->
+
+<div class="media-left media-middle">
+  <a href="#" class="img-circle img-circle-xs">
+    <img
+        class="media-object"
+        ng-show="!!ctrl.event.img"
+        ng-src="{{ctrl.event.img}}"
+        alt=""
+    >
+  </a>
+</div> <!-- media-left -->
+
+<div class="media-body media-middle">
+  <label class="h7 font-bold">{{ctrl.event.title}}</label>
+</div>  <!-- media-body -->
+
+<div class="media-right media-middle">
+  <span class="text-gray dark fz-xs no-wrap">
+      <b>date:</b> {{ctrl.event.start_time | date: 'MMMM d, yyyy'}}
+  </span>
+</div> <!-- media-right -->

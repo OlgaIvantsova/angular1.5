@@ -1,0 +1,110 @@
+<div class="app wrapper wrapper-mobile">
+<main ng-if="!ctrl.isLoggedIn">
+  <div class="container-fluid main-container">
+    <section class="section-home">
+      <div class="centered-wrp text-center">
+        <img src="../../img/logo@2x.png" class='logo' alt="">
+        <div class="text-wrp text-primary text-uppercase">
+          <p>
+            Discounted Uber’s to your favorite bars,
+            restaurants, and shopping spots.
+          </p>
+        </div>
+        <div class="btn-wrp" ng-hide="ctrl.pendingStatus">
+          <a href="" class="btn btn-facebook btn-fill btn-rounded" ng-click="ctrl.login()">Log in with Facebook</a>
+          <a href="" class="btn btn-primary btn-fill btn-rounded" ng-click="ctrl.loginAsProvider()">Login as Provider</a>
+        </div>
+        <span ng-if="ctrl.pendingStatus" class="fa fa-spinner fa-pulse fa-3x fa-fw"></span>
+      </div>
+      <div class="section-footer" ng-click="ctrl.showAboutBlock()">
+        <a href="#how-it-works"><i class="fa fa-caret-down fa-3x"></i></a>
+      </div>
+    </section>
+    <section class="section-home" id="how-it-works">
+      <div class="centered-wrp text-center">
+        <div class="title h3">
+          How it works
+        </div>
+        <div class="text-wrp">
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</p>
+          <p>Lorem ipsum dolor sit amet, consectetuer</p>
+          <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          </p>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus</p>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor</p>
+          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis  </p>
+          <p>Lorem ipsum </p>
+        </div>
+      </div>
+    </section>
+    <section class="section-home">
+      <div class="centered-wrp text-center">
+        <div class="title h3">
+          FAQ
+        </div>
+        <div class="text-wrp shadow-inner faq-wrp text-left">
+          <ul class="faq-list scroll-wrp">
+            <li>
+              <b class="question">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo.</b>
+              <span class="answer">Lorem ipsum dolor sit amet, consectetuer</span>
+            </li>
+            <li>
+              <b class="question">Lorem ipsum dolor sit amet</b>
+              <span class="answer">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</span>
+            </li>
+            <li>
+              <b class="question">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo.</b>
+              <span class="answer">Lorem ipsum dolor sit amet, consectetuer</span>
+            </li>
+            <li>
+              <b class="question">Lorem ipsum dolor sit amet</b>
+              <span class="answer">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</span>
+            </li>
+            <li>
+              <b class="question">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo.</b>
+              <span class="answer">Lorem ipsum dolor sit amet, consectetuer</span>
+            </li>
+            <li>
+              <b class="question">Lorem ipsum dolor sit amet</b>
+              <span class="answer">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section-home">
+      <div class="centered-wrp text-center">
+        <div class="title h3">
+          About us
+        </div>
+        <div class="text-wrp text-left">
+          <p>
+            Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+            Aenean commodo ligula eget dolor. <b>Aenean massa</b>. Cum sociis natoque penatibus et magnis dis parturient montes,
+            nascetur <b>ridiculus</b> mus.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet, <b>consectetuer</b> adipiscing elit. Aenean commodo ligula eget dolor.
+          </p>
+        </div>
+        <div class="btn-wrp">
+          <a href="" class="btn btn-primary btn-line btn-rounded">paras@bringusnow.com</a>
+        </div>
+      </div>
+    </section>
+    <section class="section-home">
+      <div class="centered-wrp text-center">
+        <div class="btn-wrp">
+          <a href="" class="btn btn-line btn-rounded">Privacy Policy</a>
+          <a href="" class="btn btn-line btn-rounded">Term and Conditions</a>
+          <a href="" class="btn btn-line btn-rounded">Contact Us</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+</div>
+
+
+

@@ -1,0 +1,427 @@
+body{
+    .wrapper-mobile{
+        font-size: @font-size-sm;
+        color: @default;
+        padding: 0;
+        background: url('@{path}/img/mobile/bg.jpg');
+        background-attachment: fixed;
+        background-size: cover;
+        padding: 0;
+        &.no-bg{
+            background: @white;
+        }
+        .row-sm {
+            margin-left: -2.5rem;
+            margin-right: -2.5rem;
+        }
+        &.app-body{
+            padding-top: 0rem;
+        }
+        .main-container{
+            padding: 0;
+            &.no-bg{
+                background: @white;
+            }
+        }
+        .error{
+            text-transform: uppercase;
+            color: @danger;
+            font-family: @font-light;
+            font-size: @font-size-xs + 1;
+            position: absolute;
+            bottom: -25px;
+            width: 120%;
+            left: -100%;
+            right: -100%;
+            margin: auto;
+            white-space: nowrap;
+        }
+        .nav-btn {
+            position: fixed;
+            left: 0;
+            top: 0;
+            padding: 15px 0;
+            width: 60px;
+            text-align: center;
+            z-index: 3;
+            color: @default;
+            @sec:.2s;
+            .animation;
+            &.active{
+                color: @default-dark;
+            }
+        }
+        .nav-wrp{
+            position: fixed;
+            height: 100%;
+            width: 80%;
+            background: @default;
+            top: 60px;
+            left: -80%;
+            z-index: 0;
+            .box-shadow(0; 0; 0; 0; rgb(23, 24, 25); 0%);
+            @sec:.2s;
+            .animation;
+            &.active{
+                left: 0;
+                .box-shadow(-10px; 0; 100px; 70px; rgb(23, 24, 25); 80%);
+            }
+            .nav-lg{
+                a{
+                    &:hover{
+                        color: @default;
+                    }
+                }
+            }
+        }
+        .nav-lg{
+            a{
+                position: relative;
+                padding: 1.5rem;
+                .fa{
+                    width: 22px;
+                    text-align: center;
+                    margin-right: .5rem;
+                }
+                &:before{
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 1px;
+                    opacity: .1;
+                    background: @white;
+                    .calc(width, '100% - 45px')
+                }
+            }
+        }
+        .no-event{
+            position: fixed;
+            top: 60px;
+            left: 0;
+            right: 0;
+            background: #dae1e8;
+            z-index: 2;
+            height: 40px;
+            .error {
+                top: 50%;
+                left: 50% !important;
+                bottom: initial !important;
+                transform: translate(-50%, -50%);
+                text-align: center;
+                right: inherit !important;
+            }
+        }
+        .section-home{
+            height: 100vh;
+            position: relative;
+            background: url('@{path}/img/mobile/bg2.png');
+            background-size: cover;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+            & + .section-home{
+                .centered-wrp{
+                    top: 45%;
+                    background-position: 0px -20px;
+                }
+            }
+        }
+        .faq-wrp{
+            *{
+                display: inline-block;
+                width: 100%;
+            }
+            .faq-list{
+                position: relative;
+                margin: 0;
+                padding-left: 0;
+                li{
+                    & + li{
+                        margin-top: 2rem;
+                    }
+                }
+                .answer,
+                .question{
+                    position: relative;
+                    padding-left: 2rem;
+                    &:before{
+                        position: absolute;
+                        left: 0;
+                    }
+                }
+                .question{
+                    &:before{
+                        content: 'Q:';
+                    }
+                }
+                .answer{
+                    &:before{
+                        content: 'A:';
+                    }
+                }
+            }
+        }
+        .phone-group{
+            font-size: @font-size-md;
+            display: block;
+            width: 60%;
+            margin: 0 auto;
+            position: relative;
+            border-bottom: 1px solid @default;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            &:before{
+                left: 0;
+                content: '+1';
+                font-family: @font-bold;
+            }
+            .form-control{
+                font-size: @font-size-md;
+                max-width: 110px;
+                display: inline-block;
+                padding: 1rem 0px;
+                display: inline-block;
+                border-bottom-width: 0;
+
+                &::-webkit-input-placeholder {
+                    /* WebKit browsers */
+                    color: #dbdee0 !important;
+                    font-family: @font-light !important;
+                }
+
+                &:-moz-placeholder {
+                    /* Mozilla Firefox 4 to 18 */
+                    font-family: @font-light !important;
+                    color: #dbdee0 !important;
+                }
+                &::-moz-placeholder {
+                    /* Mozilla Firefox 19+ */
+                    font-family: @font-light !important;
+                    color: #dbdee0 !important;
+                }
+                &:-ms-input-placeholder {
+                    /* Internet Explorer 10+ */
+                    font-family: @font-light !important;
+                    color: #dbdee0 !important;
+                }
+            }
+        }
+        form[name="codeForm"] .phone-group {
+            &:before{
+                content: '';
+            }
+        }
+        form span.error {
+            color: #337ab7;
+        }
+        form a:hover span.error {
+            text-shadow: 1px 1px 2px grey;
+        }
+        #map-canvas{
+            width: 100%;
+            height: 100%;
+            position: absolute !important;
+            top: 0;
+            left: 0;
+        }
+        .map-wrp{
+            margin: 0;
+            max-height: 100vh;
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            margin-left: -2.5rem;
+            margin-right: -2.5rem;
+            display: inherit;
+            width: auto;
+            .map {
+                width: 100%;
+                min-height: 100%;
+                position: absolute;
+                left: -100%;
+                top: -100%;
+                right: -100%;
+                bottom: -100%;
+                margin: auto;
+            }
+        }
+        .logo{
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 50%;
+            margin-bottom: 3rem;
+        }
+        .centered-wrp{
+            position: relative;
+            top: 50%;
+            left: 50%;
+            .translate(-50%, -50%);
+        }
+        .section-header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            .box-shadow(0; 0; 13px; 0; #000; 14%);
+            z-index: 100;
+            background: @white;
+            .form-group{
+                margin-bottom: 0;
+            }
+            .nav-btn{
+                background: @white;
+                z-index: 6;
+            }
+            .form-control{
+                z-index: 5;
+                position: relative;
+                background: @white;
+            }
+        }
+        .form-group{
+            &.has-icon{
+                .form-control{
+                    padding-right: 5rem;
+                }
+                .icon-wrp {
+                    position: absolute;
+                    top: 50%;
+                    right: 0;
+                    .translate (-50%, -50%);
+                    color: @primary-hover;
+                    z-index: 7;
+                }
+            }
+            &.has-left{
+                .form-control{
+                    padding-left: 5rem;
+                }
+            }
+            &.btn-left{
+                padding-left: 5rem;
+            }
+        }
+        .section-footer{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+        .section-footer a {
+            color: #337ab7;
+        }
+        .btn{
+            padding: 1.5rem 2.5rem;
+            min-width: 190px;
+        }
+        .btn-wrp{
+            .btn{
+                & + .btn{
+                    margin-left: 0;
+                    margin-top: 2rem;
+                }
+            }
+        }
+        .title{
+            margin-top: 0;
+            margin-bottom: 3.5rem;
+        }
+        .scroll-wrp{
+            max-height: 360px;
+            padding: .5rem 0 ;
+            overflow: hidden;
+            overflow-y: auto;
+        }
+        .shadow-inner{
+            position: relative;
+            &:after,
+            &:before{
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: 10px;
+                z-index: 5;
+            }
+            &:before{
+                top: 0;
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100 */
+                background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+            }
+            &:after{
+                bottom: 6px;
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+100 */
+                background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+                background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+            }
+        }
+        .form-control{
+            font-family: @font-light;
+            background: @none;
+            box-shadow: 0 0 0 0 @none;
+            border: 0;
+            border-bottom: 1px solid @default;
+            border-radius: 0;
+            color: @default;
+            &[type="text"]{
+                font-family: @font-medium;
+            }
+            &.form-control-clear{
+                border: 0;
+            }
+            &.form-control{
+                height: auto;
+                padding: 2rem 1.5rem;
+            }
+            &:focus{
+                box-shadow: 0 0 0 0 @none;
+            }
+            &.placeholder-dark{
+                &::-webkit-input-placeholder {
+                    /* WebKit browsers */
+                    font-family: @font-light !important;
+                    color: @default !important;
+                }
+                &:-moz-placeholder {
+                    /* Mozilla Firefox 4 to 18 */
+                    font-family: @font-light !important;
+                    color: @default !important;
+                }
+                &::-moz-placeholder {
+                    /* Mozilla Firefox 19+ */
+                    font-family: @font-light !important;
+                    color: @default !important;
+                }
+                &:-ms-input-placeholder {
+                    /* Internet Explorer 10+ */
+                    font-family: @font-light !important;
+                    color: @default !important;
+                }
+            }
+        }
+    }
+
+}
+.card__part{
+    .card__face__from-to{
+        .calc(width, '100% - 140px');
+        p{
+            &:first-child{
+                white-space: nowrap;
+            }
+        }
+    }
+    .card__face__stats--req {
+        width: 100%;
+        .calc(width, '100% - 185px');
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}

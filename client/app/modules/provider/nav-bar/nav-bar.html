@@ -1,0 +1,39 @@
+<nav-bar>
+  <header class="header header-white shadow">
+    <div class="container-fluid">
+      <a href="/" class="navbar-brand" ng-click="ctrl.onLogoClick($event)">
+        <div class="logo2x"></div>
+      </a>
+
+      <div class="header-nav nav pull-right nav-right" ng-show="ctrl.isUserDropdownShow">
+        <ul class="list-inline dt">
+          <li class='vam'>
+            <div class="btn-wrp" ng-click="ctrl.toggleMenu()">
+              <div class="bar-btn {{ctrl.isMenuOpen ? 'active' : ''}}">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="main-nav-wrp">
+                <ul class="nav">
+                  <li ng-click="ctrl.moveToUserProfile()">
+                    <a href="#">
+                      <i class="fa icon-profile"></i>
+                      <span>Profile</span>
+                    </a>
+                  </li>
+                  <li ng-click="ctrl.logout()">
+                    <a href="#">
+                      <i class="fa icon-logout"></i>
+                      <span>Logout</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+</nav-bar>

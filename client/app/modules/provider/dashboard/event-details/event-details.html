@@ -1,0 +1,84 @@
+<div class="event-details">
+  <div class="box box-footer-fixed">
+    <div class="box-header">
+      <label class="title h3">{{ctrl.activeEvent.title}}</label>
+      <p class="subtitle">{{ctrl.activeEvent.place_data.location.address}}</p>
+    </div>  <!-- box-header -->
+    <div class="box-body">
+      <div class="hr border border-top"></div>
+      <div class="card-wrp text-center">
+        <div class="card-item">
+            <div class="card-wrp-align">
+                <div class="card-header">
+                    <div href="#" class="img-circle img-circle-large-icon img-circle-xl img-circle-inline">
+                        <img class="media-object mCS_img_loaded" ng-src="{{ctrl.activeEvent.img}}">
+                    </div>
+                    <div class="title h4">{{ctrl.activeEvent.title}}</div>
+                    <div class="hr hr-xl border border-top"></div>
+                </div>
+
+                <div class="card-body">
+                    <div class="table table-clear">
+                        <div class="form-group">
+                            <span class='text-uppercase inline'><b>date start:</b></span>
+                            <span class='inline'>
+                              {{ctrl.activeEvent.start_time | date: 'MMMM d, yyyy HH:mm a' || 'No start time'}}
+                            </span>
+                        </div><!-- form-group -->
+                        <div class="form-group">
+                            <span class='text-uppercase inline'><b>date end:</b></span>
+                            <span class='inline'>
+                              {{ctrl.activeEvent.end_time | date: 'MMMM d, yyyy HH:mm a' || 'No end time'}}
+                            </span>
+                        </div><!-- form-group -->
+
+                      <div class="form-group">
+                        <span class='text-uppercase inline'><b>sms details:</b></span>
+                        <span class='inline'>{{ctrl.activeEvent.sms_details}}</span>
+                      </div><!-- form-group -->
+                      <div class="form-group">
+                        <span class='text-uppercase inline'><b>coupons available:</b></span>
+                        <span class='inline'>{{ctrl.activeEvent.coupons_available}}</span>
+                      </div><!-- form-group -->
+
+                        <div class="form-group form-group-row">
+                            <label class='text-uppercase inline'><b>description:</b></label>
+                            <span class='inline'>{{ctrl.activeEvent.description}}</span>
+                        </div>
+                    </div>
+                </div> <!-- card-body -->
+          </div> <!-- card-align -->
+
+          <div class="box-footer box-bottom text-center">
+            <div class="btn btn-info btn-rounded btn-line"
+                 ng-show="ctrl.isMobileVersion()"
+                 ng-click="ctrl.backToPlaceList()">
+              Back to place list
+            </div>
+
+            <div
+                class="btn btn-danger btn-rounded btn-line pull-left"
+                ng-click="ctrl.openConfirmRemoveEvent()"
+            >
+              Delete
+            </div>
+
+            <button
+                id="stripeBtn"
+                class="btn btn-info"
+                ng-click="ctrl.onPay()"
+                ng-show="!ctrl.activeEvent.paid"
+            >
+              Pay
+            </button>
+
+            <div class="btn btn-primary btn-rounded btn-line pull-right" ng-click="ctrl.showEventEdit()">
+              Edit
+            </div>
+          </div>  <!-- box-footer -->
+
+        </div> <!-- card -->
+      </div> <!-- card-wrp -->
+    </div>  <!-- box-body -->
+  </div> <!-- box -->
+</div> <!-- event-details -->

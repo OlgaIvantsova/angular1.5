@@ -1,0 +1,347 @@
+html, body{
+    overflow-y: auto;
+}
+body{
+    background: @gray;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-weight: 100;
+    -moz-osx-font-smoothing: grayscale;
+    .wrapper{
+        background: @gray;
+        font-size: @font-size-default;
+        font-family: @font-default;
+        padding-top: 7rem;
+        color: @default;
+        @media (max-width: 767px) {
+            padding-top: 5rem;
+        }
+        &.app-body{
+            padding-top: 7rem;
+            @media (max-width: 767px) {
+                padding-top: 5rem;
+            }
+        }
+    }
+}
+
+#stripeBtn {
+    display: inline-block;
+    margin-right: 15px;
+    padding: 1rem 3rem;
+    border-radius: 30px;
+    color: white;
+}
+
+.oh{
+    overflow: hidden;
+}
+
+.layout-fill{
+    height: auto;
+    min-height: 0;
+}
+.centered-wrp{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    .translate (-50%, -50%);
+}
+.align-wrp{
+    position: relative;
+    top: 50%;
+    .translate(0, -50%);
+    &.no-align-xs{
+        @media (max-width: 767px) {
+            top: 0;
+            .translate(0, 0);
+        }
+    }
+}
+.auth{
+    background: url( "@{path}/img/landing-bg.jpg");
+    background-size: cover;
+    height: 100vh;
+    height: 100%;
+}
+[ui-view]{
+    height: 100%;
+}
+.img-circle{
+    display: block;
+    position: relative;
+    width: 45px;
+    height: 45px;
+    overflow: hidden;
+    @radius:100%;
+    .border-radius;
+    z-index: 2;
+    background: @primary-scroll;
+    &:before{
+        content: "\f000";
+        font: normal normal normal 14px/1 FontAwesome;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: @white;
+        .user-icon&{
+            content: "\f2c0";
+        }
+        .img-circle-lg&{
+            font-size: @h2;
+        }
+    }
+    &.img-circle-inline{
+        display: inline-block;
+    }
+    &.img-circle-large-icon {
+        &:before {
+            font-size: 5em;
+        }
+    }
+    img{
+        position: absolute;
+        margin: auto;
+        min-height: 100%;
+        min-width: 100%;
+        left: -100%;
+        right: -100%;
+        top: -100%;
+        bottom: -100%;
+    }
+    &.img-circle-xs{
+        width: 27px;
+        height: 27px;
+        &:before{
+            font-size: @font-size-xs;
+        }
+    }
+    &.img-circle-lg{
+        width: 80px;
+        height: 80px;
+    }
+    &.img-circle-xl{
+        width: 150px;
+        height: 150px;
+    }
+    /*.active &{
+        .box-shadow(0; 0; 0; 3px; @white; 70%);
+    }*/
+}
+.landing{
+    width: 100%;
+    display: inline-block;
+}
+.map-wrp{
+    margin: 0 0 1rem;
+    position: relative;
+    height: 380px;
+    overflow: hidden;
+    display: inherit;
+    width: auto;
+    .map {
+        width: 100%;
+        min-height: 100%;
+        position: absolute;
+        left: -100%;
+        top: -100%;
+        right: -100%;
+        bottom: -100%;
+        margin: auto;
+    }
+}
+.border{
+    border-width: 0px;
+    border-color: @primary-hover;
+    border-style: solid;
+    &.border-top{
+        border-top-width: 1px;
+    }
+}
+.shadow{
+    .box-shadow(0; 1px; 2px; 0; @gray-clean; 100%);
+    &.shadow-lg{
+        .box-shadow(0; 20px; 40px; 0; #000; 20%);
+    }
+}
+.shadow-inner{
+    position: relative;
+    &:after,
+    &:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        height: 10px;
+        z-index: 5;
+    }
+    &:before{
+        top: 0;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&1+0,0+100 */
+        background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+    }
+    &:after{
+        bottom: 0;
+        /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+100 */
+        background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+    }
+}
+&.white{
+    background: @white;
+}
+
+.img-landing{
+    background: url('@{path}/img/landing.png') no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 440px;
+    background-position: center center;
+    @media (max-width: 767px) {
+        height: 140px;
+    }
+    @media (max-width: 322px) {
+        display: none;
+    }
+}
+.logo2x{
+    background: url('@{path}/img/logo@2x-orig.png') no-repeat;
+    background-size: contain;
+    width: 150px;
+    height: 42px;
+    img{
+        opacity: 0;
+        width: 60%;
+    }
+    @media (max-width: 767px) {
+        width: 80px;
+        height: 32px;
+    }
+}
+.place-details, .event-details{
+    @media (min-width: 1200px) {
+        margin-left: -3.5rem;
+    }
+    @media (min-width: 992px) and (max-width: 1199px) {
+        margin-left: -2.5rem;
+    }
+}
+.form-group{
+    &.form-group-row{
+        .inline{
+            width: 100%;
+            display: inline-block;
+        }
+    }
+    .inline{
+        display: inline-block;
+        position: relative;
+        vertical-align: text-top;
+    }
+    .form-inline &{
+        display: inline-block;
+    }
+}
+.form-inline {
+    &.from-group {
+        display: inline-block;
+    }
+}
+.event-edit{
+    .form-group{
+        .date, .time, .title{
+            .form-control{
+                width: 100%;
+                min-width: 0;
+            }
+        }
+        .date{
+            .form-control{
+                max-width: 115px;
+            }
+        }
+        .time{
+            .form-control{
+                // max-width: 56px;
+            }
+            &:after{
+                content: 'pm';
+                position: absolute;
+                right: -20px;
+                top: 0;
+            }
+        }
+        .title{
+            .form-control{
+                max-width: 132px;
+            }
+        }
+    }
+}
+.border{
+    position: relative;
+    overflow: hidden;
+    &.right{
+        &:after{
+            content: '';
+            position: absolute;
+            top: -100%;
+            bottom: -100%;
+            margin: auto;
+            right: 0px;
+            width: 1px;
+            background: @gray-light;
+            @media (min-width: 1200px) {
+                .calc(height, '100vh - 7rem');
+            }
+            @media (min-width: 992px) and (max-width: 1199px) {
+                .calc(height, '100vh - 2rem');
+            }
+        }
+    }
+}
+.hr{
+    &.hr-xl{
+        margin: 3rem 0;
+    }
+}
+.event-edit{
+    .card-header{
+        .hr{
+            border-color: @none;
+        }
+    }
+}
+.edit-place{
+    .hr{
+        border-color: @none;
+    }
+}
+
+::-webkit-input-placeholder {
+/* WebKit browsers */
+  color: #dbdee0 !important;
+  font-family: @font-light !important;
+}
+
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  font-family: @font-light !important;
+  color: #dbdee0 !important;
+}
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  font-family: @font-light !important;
+  color: #dbdee0 !important;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  font-family: @font-light !important;
+  color: #dbdee0 !important;
+}

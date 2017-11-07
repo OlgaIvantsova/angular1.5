@@ -1,0 +1,37 @@
+.profile {
+  margin: 0 auto;
+  background-color: white;
+  max-width: 700px;
+  margin-top: 70px;
+  padding: 40px 60px;
+
+  md-card-title-media {
+    border: 1px solid #ccc;
+    height: 150px;
+    width: 150px;
+    margin-right: 40px;
+  }
+
+  .profile-user-form {
+    margin-top: 15px;
+
+    label {
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: bold;
+      color: $Gray;
+      margin-top: -21px;
+    }
+
+    md-input-container {
+      margin: 0;
+      font-size: 14px;
+
+      &.md-input-focused {
+        input {
+          border-bottom-color: $BondyBlue;
+        }
+      }
+    }
+  }
+}
